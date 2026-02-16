@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Edit Note</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Edit Note</h2>
+
+    <form action="/update-note/<%= note.id %>" method="POST">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" value="<%= note.title %>" required>
+        <br><br>
+        <label for="content">Content:</label>
+        <textarea id="content" name="content" rows="4" required><%= note.content %></textarea>
+        <br><br>
+        <button type="submit">Update Note</button>
+    </form>
+
+    <br>
+    <a href="/">Cancel</a>
+
+</body>
+
+</html>
